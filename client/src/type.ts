@@ -1,5 +1,14 @@
 // Proxy
-import type { Client, inferProcedureKey, inferProcedureResult, inferProcedures, inferSubscriptionResult, ProceduresDef, SubscriptionOptions, _inferProcedureHandlerInput } from "@rspc/client";
+import {
+  Client,
+  inferProcedureKey,
+  inferProcedureResult,
+  inferProcedures,
+  inferSubscriptionResult,
+  ProceduresDef,
+  SubscriptionOptions,
+  _inferProcedureHandlerInput
+} from "@rspc/client";
 
 export const ClientOperationProxyRenames: Record<string, keyof Client<any>> = {
   query: 'query',

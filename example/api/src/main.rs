@@ -34,20 +34,31 @@ async fn main() {
         .merge("count.", count::mount())
         .mutation("sendMsg", |t| {
             t(|_, v: String| {
-                println!("Client said '{}'", v);
+                println!("Client said [{v}]");
                 v
             })
         })
-        .query("echo", |t| t(|_, v: String| v))
+        .query("echo", |t| {
+            t(|_, v: String| {
+                println!("echo [{v}]");
+                format!("Got {v}")
+            })
+        })
         .query("error", |t| {
             t(|_, _: ()| {
+                println!("Requested error");
                 Err(rspc::Error::new(
                     rspc::ErrorCode::InternalServerError,
                     "Something went wrong".into(),
                 )) as Result<String, rspc::Error>
             })
         })
-        .query("transformMe", |t| t(|_, _: ()| "Hello, world!".to_string()))
+        .query("transformMe", |t| {
+            t(|_, _: ()| {
+                println!("transformMe");
+                "Hello, world!".to_string()
+            })
+        })
         .subscription("pings", |t| {
             t(|_ctx, _args: ()| {
                 stream! {
@@ -78,11 +89,8 @@ async fn main() {
                         .config(config)
                         .build()
                         .arced()
-                        .endpoint(move |id: Path<String>| {
-                            println!("Client requested operation '{:?}'", id);
-                            Ctx {
-                                count: count.clone(),
-                            }
+                        .endpoint(move |id: Path<String>| Ctx {
+                            count: count.clone(),
                         })
                         .axum()
                 })

@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "pnpm -r --parallel --filter=!@rspc-proxy/example-* exec pnpm dev",
     "api": "cd ./example/api; cargo watch -x 'run' -w './src'",
-    "web": "pnpm -r --parallel --filter=@rspc-proxy/example-web exec pnpm dev"
+    "astro": "pnpm -r --parallel --filter=@rspc-proxy/example-web exec pnpm dev",
+    "solid": "pnpm -r --parallel --filter=@rspc-proxy/example-solid exec pnpm dev"
   },
   "engines": {
     "pnpm": ">=7.0.0",

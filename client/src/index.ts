@@ -4,7 +4,7 @@ import {
   createClient as _createClient
 } from "@rspc/client";
 import { ClientOperationProxyRenames, ClientProxy } from "./type";
-import { createProxy } from "./utils/createProxy";
+import { _createProxy } from "./utils/createProxy";
 
 export function createClientProxy<TProcedures extends ProceduresDef>(
   client: ReturnType<typeof _createClient<TProcedures>>
@@ -25,7 +25,7 @@ export function createClientProxy<TProcedures extends ProceduresDef>(
     }
   }
 
-  let proxy = createProxy(({ keys, params }) => {
+  let proxy = _createProxy(({ keys, params }) => {
 
     // Return early if a single key is given
     if (keys.length === 1) {
@@ -54,3 +54,4 @@ export function createClientProxy<TProcedures extends ProceduresDef>(
   return proxy as any
 }
 
+export { _createProxy }

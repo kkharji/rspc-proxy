@@ -1,0 +1,34 @@
+{
+  "name": "@rspc-proxy/example-solid",
+  "version": "0.0.0",
+  "description": "..",
+  "private": true,
+  "author": "kkharji",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.8.2",
+    "vite": "^3.0.9",
+    "vite-plugin-solid": "^2.3.0"
+  },
+  "dependencies": {
+    "solid-js": "^1.5.1",
+    "@rspc/solid": "0.1.2",
+    "@rspc/client": "0.1.2",
+    "@rspc-proxy/solid": "workspace:*",
+    "@tanstack/solid-query": "^4.12.0",
+    "@babel/core": "^7.19.3"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@babel/core"
+      ]
+    }
+  }
+}
