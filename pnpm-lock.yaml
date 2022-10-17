@@ -19,12 +19,12 @@ importers:
       typescript: ^4.6.4
       vite: ^3.1.0
     dependencies:
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-    devDependencies:
       '@rspc-proxy/react': link:../../packages/react
       '@rspc/client': 0.1.2
       '@rspc/react': 0.1.2_u4yzb6c2i4vnfntexoqecqsjge
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    devDependencies:
       '@tanstack/react-query': 4.12.0_biqbaboplfbrettd7655fr4n2y
       '@types/react': 18.0.21
       '@types/react-dom': 18.0.6
@@ -1475,7 +1475,6 @@ packages:
       '@rspc/client': 0.1.2
       '@tanstack/react-query': 4.12.0_react@18.2.0
       react: 18.2.0
-    dev: true
 
   /@rspc/solid/0.1.2_aavzex7htjklpjclwmq2pzofla:
     resolution: {integrity: sha512-lnboDerqpCypgHp2dzrr9eltGXN59WiyQgZqYeZCUXTgU92tlJq5yV/1KMtZ0BYmHRIvUDGNJBV2DiRINNqoMg==}
@@ -1523,7 +1522,6 @@ packages:
       '@tanstack/query-core': 4.12.0
       react: 18.2.0
       use-sync-external-store: 1.2.0_react@18.2.0
-    dev: true
 
   /@tanstack/solid-query/4.12.0_solid-js@1.5.8:
     resolution: {integrity: sha512-dn9A+NL+uY/Yc4NVTmgtmMDhTmFCoO+0w1zFZqw6kJZhnCZyd8cKz+KXQW4QMDwirzQg4p6qVAaKNpFeUJNPeg==}
@@ -3137,7 +3135,6 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       react: 18.2.0
-    dev: true
 
   /vite-plugin-solid/2.3.9_solid-js@1.5.8+vite@3.1.8:
     resolution: {integrity: sha512-+lprsYgt9DVNp0kbDj2d2HWAPI13L8ff5xslk9SjiPBcsY/YUZ/1Wj0J/Oj5aiVAhwfPm8IcM3bzyHJUPlmc8w==}

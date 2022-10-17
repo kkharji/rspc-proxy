@@ -1,15 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-import { hooks, RspcProvider } from './rspc'
+import { rspc, RspcProvider } from './rspc'
 import Counter from './components/Counter'
 
 function App() {
-  const { data: version } = hooks.useQuery(["version"]);
-  const { data: transformMe } = hooks.useQuery(["transformMe"]);
-  const { data: echo } = hooks.useQuery(["echo", "Hello From Frontend!"]);
-  const { mutate, isLoading } = hooks.useMutation("sendMsg");
-  const { error } = hooks.useQuery(["error"], {
+  const { data: version } = rspc.version.query([]);
+  const { data: transformMe } = rspc.transformMe.query([]);
+  const { data: echo } = rspc.echo.query(["Hello From Frontend!"]);
+  const { mutate, isLoading } = rspc.sendMsg.mutate();
+  const { error } = rspc.error.query([], {
     retry: false,
   });
 

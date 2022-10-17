@@ -41,7 +41,7 @@
   "peerDependencies": {
     "@rspc/solid": "0.1.2",
     "@rspc/client": "0.1.2",
-    "@tanstack/solid-query": "^4.6.0",
+    "@tanstack/solid-query": "4.8.0",
     "solid-js": "^1.5.5"
   }
 }
