@@ -1,5 +1,3 @@
 packages:
- - client
- - react
- - solid
- - example/*
+ - packages/*
+ - examples/*

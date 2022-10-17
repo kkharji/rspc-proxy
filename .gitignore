@@ -20,4 +20,5 @@ bindings.ts
 node_modules
 .pnpm-debug.log*
 *.tsbuildinfo
-/*/dist
+/packages/*/dist
+/examples/*/dist
