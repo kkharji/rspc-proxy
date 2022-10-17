@@ -1,6 +1,6 @@
 {
   "name": "@rspc-proxy/solid",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Experimental rspc proxy for @rspc/solid",
   "keywords": [
     "rspc",

@@ -6,6 +6,10 @@ import {
 import { ClientOperationProxyRenames, ClientProxy } from "./type";
 import { _createProxy } from "./utils/createProxy";
 
+const isProduction = window
+  ? !window.location.host.match("localhost")
+  : true // todo: set for node?
+
 export function createClientProxy<TProcedures extends ProceduresDef>(
   client: ReturnType<typeof _createClient<TProcedures>>
 ): ClientProxy<TProcedures> {
@@ -31,7 +35,10 @@ export function createClientProxy<TProcedures extends ProceduresDef>(
     if (keys.length === 1) {
       let [method, input, opts]: [string, any, any] = [keys[0], params[0], params[1]];
 
-      console.debug("NonProxy", { method, input, opts })
+
+      if (!isProduction) {
+        console.debug("NonProxy", { method, input, opts })
+      }
       return execute(method, input, opts)
     }
 
@@ -47,7 +54,9 @@ export function createClientProxy<TProcedures extends ProceduresDef>(
     }
     const input: any = [key, ...params];
 
-    console.debug("Proxy", { key, input, opts })
+    if (!isProduction) {
+      console.debug("Proxy", { key, input, opts })
+    }
     return execute(method, input, opts);
   })
 

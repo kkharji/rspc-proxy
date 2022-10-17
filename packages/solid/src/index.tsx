@@ -7,6 +7,10 @@ const HooksOperationProxyRenames: Record<string, keyof SolidQueryHooks<any>> = {
   mutate: 'createMutation',
 } as const;
 
+const isProduction = window
+  ? !window.location.host.match("localhost")
+  : true // todo: set for node?
+
 export function createSolidQueryHooksProxy<TProcedures extends ProceduresDef>(
   hooks: SolidQueryHooks<TProcedures>
 ): SolidQueryProxy<TProcedures> {
@@ -23,7 +27,10 @@ export function createSolidQueryHooksProxy<TProcedures extends ProceduresDef>(
     }
     const input: any = [key, ...params.flat()];
 
-    console.debug("Proxy", { key, input, opts })
+
+    if (!isProduction) {
+      console.debug("Proxy", { key, input, opts })
+    }
 
     switch (method) {
       case "createQuery": {
