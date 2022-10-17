@@ -1,8 +1,12 @@
 {
   "name": "@rspc-proxy/client",
-  "version": "0.1.2",
+  "version": "0.0.1",
   "description": "Experimental rspc proxy for @rspc/client",
-  "keywords": [],
+  "keywords": [
+    "rspc",
+    "proxy",
+    "client"
+  ],
   "author": "kkharji",
   "license": "MIT",
   "main": "dist/index.js",

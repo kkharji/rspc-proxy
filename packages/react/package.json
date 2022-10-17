@@ -1,8 +1,13 @@
 {
   "name": "@rspc-proxy/react",
-  "version": "0.1.2",
+  "version": "0.0.1",
   "description": "Experimental rspc proxy for @rspc/react",
-  "keywords": [],
+  "keywords": [
+    "rspc",
+    "proxy",
+    "react",
+    "react-js"
+  ],
   "author": "kkharji",
   "license": "MIT",
   "main": "dist/index.js",
