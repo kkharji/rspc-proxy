@@ -10,7 +10,8 @@
     "dev": "pnpm -r --parallel --filter=!@rspc-proxy/example-* exec pnpm dev",
     "api": "cd ./example/api; cargo watch -x 'run' -w './src'",
     "astro": "pnpm -r --parallel --filter=@rspc-proxy/example-web exec pnpm dev",
-    "solid": "pnpm -r --parallel --filter=@rspc-proxy/example-solid exec pnpm dev"
+    "solid": "pnpm -r --parallel --filter=@rspc-proxy/example-solid exec pnpm dev",
+    "react": "pnpm -r --parallel --filter=@rspc-proxy/example-react exec pnpm dev"
   },
   "engines": {
     "pnpm": ">=7.0.0",

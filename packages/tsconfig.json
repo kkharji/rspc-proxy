@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./packages",
+    "strict": true,
+    "paths": {
+      "@rspc-proxy/client": [
+        "../client/src"
+      ],
+      "@rspc-proxy/react": [
+        "../react/src"
+      ],
+      "@rspc-proxy/solid": [
+        ".../solid/src"
+      ]
+    }
+  }
+}
