@@ -1,0 +1,20 @@
+{
+  "name": "rspc-proxy",
+  "version": "0.0.1",
+  "description": "rspc proxy workspace",
+  "keywords": [],
+  "author": "kkharji",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm -r --parallel --filter=!@rspc-proxy/example-* exec pnpm dev",
+    "api": "cd ./example/api; cargo watch -x 'run' -w './src'",
+    "web": "pnpm -r --parallel --filter=@rspc-proxy/example-web exec pnpm dev"
+  },
+  "engines": {
+    "pnpm": ">=7.0.0",
+    "npm": "pnpm",
+    "yarn": "pnpm",
+    "node": ">=16.0.0"
+  }
+}

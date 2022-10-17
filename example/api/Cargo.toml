@@ -1,0 +1,16 @@
+[package]
+name = "api"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.64"
+publish = false
+
+[dependencies]
+serde_json = "1.0.85"
+serde = { version = "1.0.145", features = ["derive"] }
+axum = "0.5.16"
+rspc = { version = "0.1.2", features = ["axum"] }
+tokio = { version = "1.21.2", features = ["full"] }
+tower-http = { version = "0.3.4", features = ["cors"] }
+tap = "1.0.1"
+async-stream = "0.3.3"
