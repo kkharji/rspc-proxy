@@ -1,6 +1,6 @@
 {
   "name": "@rspc-proxy/client",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Experimental rspc proxy for @rspc/client",
   "keywords": [
     "rspc",

@@ -10,14 +10,14 @@ function Example({ name }: { name: string }) {
   const echo = rspc.echo.query(["mymsg"], {
     refetchOnWindowFocus: false
   });
-  const version = rspc.version.query([]);
-  const transformMe = rspc.transformMe.query([]);
+  const version = rspc.version.query();
+  const transformMe = rspc.transformMe.query();
   const sendMsg = rspc.sendMsg.mutate({
     onMutate() {
       console.log("message sent")
     }
   });
-  const error = rspc.error.query([], {
+  const error = rspc.error.query({
     retry: 0, // note does not work
   });
 

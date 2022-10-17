@@ -86,14 +86,14 @@ type inferClientOperationFunction<
   P extends ProceduresDef,
   O extends keyof ProceduresDef,
   K extends inferProcedureKey<P, O>,
-  > = O extends "queries" ? {
-    query(input: QueryInput<P, K>, opts?: QueryOptions<P, K>): QueryResult<P, K>
-  }
+  > = O extends "queries" ? QueryInput<P, K> extends []
+  ? { query(opts?: QueryOptions<P, K>): QueryResult<P, K> }
+  : { query(args: QueryInput<P, K>, opts?: QueryOptions<P, K>): QueryResult<P, K> }
   : O extends "mutations" ? {
     mutate(opts?: MutationOptions<P, K>): MutationResult<P, K>
   }
   : O extends "subscriptions" ? {
-    subscribe(input: SubscriptionInput<P, K>, opts: SubscriptionOptions<P, K>): void
+    subscribe(args: SubscriptionInput<P, K>, opts: SubscriptionOptions<P, K>): void
   }
   : never;
 

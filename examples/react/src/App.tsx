@@ -5,11 +5,11 @@ import { rspc, RspcProvider } from './rspc'
 import Counter from './components/Counter'
 
 function App() {
-  const { data: version } = rspc.version.query([]);
-  const { data: transformMe } = rspc.transformMe.query([]);
+  const { data: version } = rspc.version.query();
+  const { data: transformMe } = rspc.transformMe.query();
   const { data: echo } = rspc.echo.query(["Hello From Frontend!"]);
   const { mutate, isLoading } = rspc.sendMsg.mutate();
-  const { error } = rspc.error.query([], {
+  const { error } = rspc.error.query({
     retry: false,
   });
 

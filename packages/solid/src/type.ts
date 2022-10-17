@@ -24,6 +24,7 @@ type QueryInput<
   K extends inferProcedureKey<P, "queries">
   > = _inferProcedureHandlerInput<inferProcedures<P>, "queries", K>;
 
+
 type QueryOptions<
   P extends ProceduresDef,
   K extends inferProcedureKey<P, "queries">,
@@ -74,9 +75,10 @@ type inferClientOperationFunction<
   T extends ProceduresDef,
   O extends keyof ProceduresDef,
   K extends inferProcedureKey<T, O>,
-  > = O extends "queries" ? {
-    query(input: QueryInput<T, K>, opts?: QueryOptions<T, K>): QueryResult<T, K>
-  }
+  > = O extends "queries"
+  ? QueryInput<T, K> extends []
+  ? { query(opts?: QueryOptions<T, K>): QueryResult<T, K> }
+  : { query(args: QueryInput<T, K>, opts?: QueryOptions<T, K>): QueryResult<T, K> }
   : O extends "mutations" ? {
     mutate(opts?: MutationOptions<T, K>): MutationResult<T, K>
   }
